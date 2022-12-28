@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class LoginService {
     @Autowired
-    public static LoginDAO dao;
+    public LoginDAO dao;
 
     public String addUser(Login login){
         //daoLayer.saveUser
@@ -22,31 +22,38 @@ public class LoginService {
         return "new user added successfully ; " + login.getUsername();
     }
     public boolean login(String username, String password) {
-        List<Login> users = new ArrayList<>();
+        List<Login> users ;
+        users = listAllUser();
         //dao.findAll().forEach(users::add);
         Login d =null;
+        System.out.println(users);
+        System.out.println("loginservice traitment");
         for(int i =0 ; i < users.size() ; i++){
             d =users.get(i);
-            if(d.getUsername() == username && d.getPassword() ==  password){
+            System.out.println("boucle traitemnt" +d);
+            if(d.getUsername() == username && d.getPasswd() ==  password){
                 return true;
             }
         }
         return false;
     }
 
-    public Login getUser(Integer id){
+    /*public Login getUser(Integer id){
         return dao.findById(id).get();
     }
 
     public void deleteUser(Integer id){
         dao.deleteById(id);
     }
-
+*/
     public List<Login> listAllUser() {
         List<Login> users = new ArrayList<>();
         dao.findAll().forEach(users::add);
         return users;
     }
+
+
+
 
     /*public String deleteUser(String username){
         Integer id = this.getId_log();

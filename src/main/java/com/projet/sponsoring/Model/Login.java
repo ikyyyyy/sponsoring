@@ -1,9 +1,7 @@
 package com.projet.sponsoring.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name="login")
@@ -11,14 +9,15 @@ public class Login {
     @Id
     private Integer id_log;
     private String username;
-    private String password;
+
+    private String passwd;
 
     public Login(){}
 
-    public Login(int id, String name, String pass){
-        id_log = id;
+    public Login(Integer d_log,String name, String pass){
+        id_log = d_log;
         username = name;
-        password = pass;
+        passwd = pass;
     }
 
     public int getId_log() {
@@ -29,16 +28,16 @@ public class Login {
         return username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswd() {
+        return passwd;
     }
 
     public void setId_log(int id_log) {
         this.id_log = id_log;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswd(String password) {
+        this.passwd = password;
     }
 
     public void setUsername(String username) {
