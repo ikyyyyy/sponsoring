@@ -10,5 +10,4 @@ public class SponsoringApplication {
 
 		SpringApplication.run(SponsoringApplication.class, args);
 	}
-
 }
