@@ -24,10 +24,11 @@ public class LoginController {
 
     @RequestMapping  (value="/loginPage",method = RequestMethod.POST)
     @ResponseBody
-    public ModelAndView LoginPage(@ModelAttribute("login") Login login){
-        System.out.println(login.getUsername());
+    public ModelAndView LoginPage(@RequestParam  String username, String password, HttpServletResponse response){
+        System.out.println(username);
+        System.out.println(password);
         System.out.println("logintraitement");
-        if(userService.login(login.getUsername(), login.getPassword())){
+        if(userService.login(username, password)){
             System.out.println("welcome");
             return new ModelAndView("home");
         }else{

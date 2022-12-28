@@ -8,14 +8,14 @@
 <body>
 <div class="container" id="container">
   <div class="form-container log-in-container">
-    <form th:action="@{/loginPage}" th:object="${login}"   , method="post">
+    <form th:action="@{/loginPage}"   , method="post">
       <h1>Login</h1>
       <div class="social-container">
         <h1>welcome back</h1>
       </div>
 
-      <input type="username"  placeholder="username" />
-      <input type="password"  placeholder="password" />
+      <input type="username" name= "username"  placeholder="username" />
+      <input type="password"  name= "password" placeholder="password" />
       <a href="#">Forgot your password?</a>
       <button type="submit">Log In</button>
     </form>
