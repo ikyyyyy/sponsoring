@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <link rel="stylesheet" href="/static/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login</title>
 </head>
 <body>
+<div class="container" id="container">
+  <div class="form-container log-in-container">
+    <form th:action="@{/loginPage}" th:object="${login}"   , method="post">
+      <h1>Login</h1>
+      <div class="social-container">
+        <h1>welcome back</h1>
+      </div>
 
-<a href="/">HOME</a>
-<a href="login">LOGIN</a>
-<a href="signup">SIGNUP</a>
-
+      <input type="username"  placeholder="username" />
+      <input type="password"  placeholder="password" />
+      <a href="#">Forgot your password?</a>
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <img src="/static/images/login1.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
