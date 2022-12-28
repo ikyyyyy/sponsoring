@@ -1,5 +1,6 @@
 package com.projet.sponsoring.Controller;
 
+import com.projet.sponsoring.DAO.LoginDAO;
 import com.projet.sponsoring.Model.Login;
 import com.projet.sponsoring.Service.LoginService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,9 +26,7 @@ public class LoginController {
     @RequestMapping  (value="/loginPage",method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView LoginPage(@RequestParam  String username, String password, HttpServletResponse response){
-        System.out.println(username);
-        System.out.println(password);
-        System.out.println("logintraitement");
+        System.out.println(username+" "+password);
         if(userService.login(username, password)){
             System.out.println("welcome");
             return new ModelAndView("home");
