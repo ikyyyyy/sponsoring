@@ -14,11 +14,24 @@ import java.util.List;
 @Service
 public class LoginService {
     @Autowired
-    public LoginDAO dao;
+    public static LoginDAO dao;
+
     public String addUser(Login login){
         //daoLayer.saveUser
         dao.save(login);
         return "new user added successfully ; " + login.getUsername();
+    }
+    public boolean login(String username, String password) {
+        List<Login> users = new ArrayList<>();
+        //dao.findAll().forEach(users::add);
+        Login d =null;
+        for(int i =0 ; i < users.size() ; i++){
+            d =users.get(i);
+            if(d.getUsername() == username && d.getPassword() ==  password){
+                return true;
+            }
+        }
+        return false;
     }
 
     public Login getUser(Integer id){

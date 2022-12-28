@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Entreprise Signup</title>
+</head>
+<body>
+
+<h1>SIGNUP FOR ENTERPRISE</h1>
+
+<a href="/">HOME</a>
+<a href="/login">LOGIN</a>
+<a href="/signup">SIGNUP</a>
+
+<hr>
+
+<form th:action="@{/saveEntreprise}" method="POST" th:object="${user}">
+  <input type="text" th:field="*{id_log}" placeholder="enter your login...">
+  <input type="password" th:field="*{password}" placeholder="enter your password...">
+  <input type="text" th:field="*{username}" placeholder="enter the name of your enterprise...">
+  <!--<input type="text" name="activite" placeholder="enter your activity...">
+  <input type="text" name="domaine" placeholder="enter your domain...">
+  <input type="text" name="dateConstruction" placeholder="enter the date of construction...">
+  <input type="text" name="type" placeholder="enter the category of your enterprise...">
+  <input type="text" name="chiffreDaffaire" placeholder="enter your money...">-->
+  <button type="submit" c>REGISTER</button>
+</form>
+
+</body>
+</html>
