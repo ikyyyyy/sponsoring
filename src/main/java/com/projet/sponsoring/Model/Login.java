@@ -9,13 +9,12 @@ public class Login {
     @Id
     private Integer id_log;
     private String username;
-
     private String passwd;
 
     public Login(){}
 
-    public Login(Integer d_log,String name, String pass){
-        id_log = d_log;
+    public Login(int id, String name, String pass){
+        id_log = id;
         username = name;
         passwd = pass;
     }
@@ -28,7 +27,7 @@ public class Login {
         return username;
     }
 
-    public String getPasswd() {
+    public String getPassword() {
         return passwd;
     }
 
@@ -36,7 +35,7 @@ public class Login {
         this.id_log = id_log;
     }
 
-    public void setPasswd(String password) {
+    public void setPassword(String password) {
         this.passwd = password;
     }
 
