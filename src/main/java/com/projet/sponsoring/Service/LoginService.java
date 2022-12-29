@@ -21,17 +21,14 @@ public class LoginService {
         dao.save(login);
         return "new user added successfully ; " + login.getUsername();
     }
-    public boolean login(String username, String password) {
-        List<Login> users ;
-        users = listAllUser();
-        //dao.findAll().forEach(users::add);
+    public boolean login(String username, String password, List<Login> l) {
+        //List<Login> users = l;
         Login d =null;
-        System.out.println(users);
         System.out.println("loginservice traitment");
-        for(int i =0 ; i < users.size() ; i++){
-            d =users.get(i);
-            System.out.println("boucle traitemnt" +d);
-            if(d.getUsername() == username && d.getPasswd() ==  password){
+        for(int i =0 ; i < l.size() ; i++){
+            d =l.get(i);
+            System.out.println("usernameis:"+d.getUsername()+"and password is:"+d.getPassword());
+            if(username.equals(d.getUsername()) && password.equals(d.getPassword())){
                 return true;
             }
         }
@@ -51,7 +48,6 @@ public class LoginService {
         dao.findAll().forEach(users::add);
         return users;
     }
-
 
 
 

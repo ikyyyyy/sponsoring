@@ -20,14 +20,11 @@ public class LoginController {
     public ModelAndView index(){
         return new ModelAndView("login");
     }
-    ///{username},{passwd}
-    //@RequestMapping(value = "/login", method = RequestMethod.POST)
-
     @RequestMapping  (value="/loginPage",method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView LoginPage(@RequestParam  String username, String password, HttpServletResponse response){
         System.out.println(username+" "+password);
-        if(userService.login(username, password)){
+        if(userService.login(username, password, userService.listAllUser())){
             System.out.println("welcome");
             return new ModelAndView("home");
         }else{
@@ -40,6 +37,10 @@ public class LoginController {
         return "index.html";
     }
 
+    @RequestMapping ("/signup")
+    public List<Login> getAllUsers(){
+        return userService.listAllUser();
+    }
  /*   @GetMapping("")
     public List<Login> list() {
         return userService.listAllUser();
