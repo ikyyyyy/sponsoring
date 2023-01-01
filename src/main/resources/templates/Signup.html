@@ -24,7 +24,7 @@
     <div class="contents order-2 order-md-1">
 
       <div class="container">
-        <div class="row align-items-center justify-content-center">
+        <div >
           <div class="testbox">
             <h1>Sign Up</h1>
 
@@ -32,20 +32,27 @@
               <hr>
               <div class="accounttype">
                 <input type="radio" value="None" id="radioOne" name="account" checked/>
-                <label for="radioOne" class="radio"  onclick="document.getElementById('choix2').style.display='none';document.getElementById('choix1').style.display='block' ">Entreprise</label>
+                <label for="radioOne" class="radio"  onclick="document.getElementById('choix2').style.display='none';document.getElementById('choix1').style.display='block';;document.getElementById('choix1-2').style.display='block';">Entreprise</label>
                 <input type="radio" value="None" id="radioTwo" name="account" />
-                <label for="radioTwo" class="radio" onclick="document.getElementById('choix1').style.display='none';document.getElementById('choix2').style.display='block' ">Club</label>
+                <label for="radioTwo" class="radio" onclick="document.getElementById('choix1').style.display='none';;document.getElementById('choix1-2').style.display='none';document.getElementById('choix2').style.display='block' ">Club</label>
               </div>
               <hr>
+              <div class="">
               <input type="text" name="name" id="name1" placeholder="Email" required style=" width:250px;"/>
-              <input type="text" name="name" id="name2" placeholder="Name" required style=" width:250px;"/>
-              <input type="password" name="name" id="name3" placeholder="Password" required style=" width:250px;"/>
-              <input type="text" name="name" id="choix1" placeholder="Adresse"  style=" width:250px;"/>
-              <input type="text" name="name" id="choix2" placeholder="Etablissement" style="display:none; width:250px;" />
+              <input type="text" name="name" id="name2" placeholder="Passwd" required style=" width:250px;"/>
+              <input type="password" name="name" id="name3" placeholder="Nom" required style=" width:250px;"/>
+              <input type="text" name="name" id="name4" placeholder="Activité" required style=" width:250px; margin-top:-10px"/>
+              <input type="text" name="name" id="name5" placeholder="Domaine" required style=" width:250px;"/>
+              <input type="text" name="name" id="name6" placeholder="Date de contruction" required style=" width:250px;"/>
+              <input type="text" name="name" id="choix1" placeholder="Type"  style=" width:250px;"/>
+              <input type="text" name="name" id="choix1-2" placeholder="Chiffre d'affaire"  style=" width:250px;"/>
+              <input type="text" name="name" id="choix2" placeholder="Desciption" style="display:none; width:250px;" />
+              </div>
               <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-              <div class="d-grid gap-2 col-6 mx-auto" align="center">
-                <button class="btn btn-outline-success" type="button" style="height:35px; width:200px;margin-left:-80%">Register</button>
-                <button class="btn btn-outline-warning" type="button"  style="height:35px; width:200px;margin-left:-80%">Login</button>
+
+              <div class="mx-auto" style="...">
+                <button class="btn btn-outline-success" type="button" style="height:35px; width:110px;margin-left:40%">Register</button>
+                <button class="btn btn-outline-warning" type="button"  style="height:35px; width:100px;margin-left:-80%">Login</button>
               </div>
             </form>
           </div>
