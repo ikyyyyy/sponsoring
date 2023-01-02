@@ -26,7 +26,7 @@ public class LoginController {
         System.out.println(username+" "+password);
         if(userService.login(username, password, userService.listAllUser())){
             System.out.println("welcome");
-            return new ModelAndView("home");
+            return new ModelAndView("club_home");
         }else{
             System.out.println("try again");
             return new ModelAndView("index");
