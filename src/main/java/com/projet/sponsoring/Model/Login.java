@@ -2,8 +2,10 @@ package com.projet.sponsoring.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
+@ToString
 @Table(name="login")
 public class Login {
     @Id
