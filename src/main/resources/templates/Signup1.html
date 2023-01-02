@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Signup</title>
+</head>
+<body>
+
+<h1>SIGNUP FOR CLUB</h1>
+
+<a href="/">HOME</a>
+<a href="/login">LOGIN</a>
+<a href="/signup">SIGNUP</a>
+
+<hr>
+<form action="#" th:action="@{/signupClub}" method="POST" >
+    <input type="text" name="username" placeholder="enter your login...">
+    <input type="password" name="passwd" placeholder="enter your password...">
+    <input type="text" name="nom" placeholder="enter the name of your enterprise...">
+    <input type="text" name="activite" placeholder="enter your activity...">
+    <input type="text" name="domaine" placeholder="enter your domain...">
+    <input type="text" name="date_construction" placeholder="enter the date of construction...">
+    <input type="text" name="description" placeholder="enter the description of your enterprise...">
+    <button type="submit">REGISTER</button>
+</form>
+
+</body>
+</html>

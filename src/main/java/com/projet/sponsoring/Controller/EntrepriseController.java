@@ -14,15 +14,15 @@ public class EntrepriseController {
     @Autowired
     EntrepriseService entreprise;
 
-    @GetMapping("/")
-    public String home(){
+    @GetMapping("/signup")
+    public String signup(){
         return "signupTest";
     }
 
-    @PostMapping("/signup")
-    public String signup(String login, String pass,String domaine, String nom, String type, String dateConst, String activite, Double chiffre_d_affaire, HttpServletRequest request){
-        entreprise.AddEntreprise(login, pass, domaine, nom, type, dateConst, activite, chiffre_d_affaire);
-        return "redirect:/";
+    @PostMapping("/signupEntreprise")
+    public String signupEntreprise(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, Double chiffre_d_affaire, HttpServletRequest request){
+        entreprise.AddEntreprise(username, passwd, domaine, nom, type, date_construction, activite, chiffre_d_affaire);
+        return "redirect:/signup";
     }
 
 }
