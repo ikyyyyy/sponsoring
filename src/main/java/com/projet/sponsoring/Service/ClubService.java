@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ClubService {
 
    @Autowired
@@ -23,7 +26,7 @@ public class ClubService {
     CoordonneeDAO daoCoord;
 
 public Club findbyname(String username){
-        List<Club> l= daoclub.findAll();
+        List<Club> l= daoClub.findAll();
         Club d=null;
         for(int i=0; i<l.size();i++){
              d = l.get(i);

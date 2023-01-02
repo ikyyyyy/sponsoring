@@ -13,11 +13,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class ClubController {
     @Autowired
     ClubService club;
-
+/*
     @GetMapping("/signup")
     public String signup(){
         return "signup1";
-    }
+    }*/
 
     @PostMapping("/signupClub")
     public String signupClub(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, String description, HttpServletRequest request){

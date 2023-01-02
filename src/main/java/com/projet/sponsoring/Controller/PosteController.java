@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 public class PosteController {
@@ -23,5 +24,10 @@ public class PosteController {
     @DeleteMapping("/delete{id}")
     public String removePoste(@RequestParam Integer id){
         return posteservice.deletePoste(id);
+    }
+
+    @RequestMapping ("/listePostes")
+    public List<Poste> getAllPostes(){
+        return posteservice.listAllPostes();
     }
 }
