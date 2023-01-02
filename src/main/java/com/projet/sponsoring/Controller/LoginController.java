@@ -37,10 +37,10 @@ public class LoginController {
         return "index.html";
     }
 
-    @RequestMapping ("/signup")
+   /* @RequestMapping ("/signup")
     public List<Login> getAllUsers(){
         return userService.listAllUser();
-    }
+    }*/
  /*   @GetMapping("")
     public List<Login> list() {
         return userService.listAllUser();

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,7 +28,7 @@
           <div class="testbox">
             <h1>Sign Up</h1>
 
-            <form action="/">
+            <form th:action="/">
               <hr>
               <div class="accounttype">
                 <input type="radio" value="None" id="radioOne" name="account" checked/>
@@ -38,21 +38,21 @@
               </div>
               <hr>
               <div class="">
-              <input type="text" name="name" id="name1" placeholder="Email" required style=" width:250px;"/>
-              <input type="text" name="name" id="name2" placeholder="Passwd" required style=" width:250px;"/>
-              <input type="password" name="name" id="name3" placeholder="Nom" required style=" width:250px;"/>
-              <input type="text" name="name" id="name4" placeholder="Activité" required style=" width:250px; margin-top:-10px"/>
-              <input type="text" name="name" id="name5" placeholder="Domaine" required style=" width:250px;"/>
-              <input type="text" name="name" id="name6" placeholder="Date de contruction" required style=" width:250px;"/>
-              <input type="text" name="name" id="choix1" placeholder="Type"  style=" width:250px;"/>
-              <input type="text" name="name" id="choix1-2" placeholder="Chiffre d'affaire"  style=" width:250px;"/>
+              <input type="username" name="login" id="name1" placeholder="login" required style=" width:250px;"/>
+              <input type="passwd" name="pass" id="name2" placeholder="Passwd" required style=" width:250px;"/>
+              <input type="nom" name="nom" id="name3" placeholder="Nom" required style=" width:250px;"/>
+              <input type="activite" name="activite" id="name4" placeholder="Activité" required style=" width:250px; margin-top:-10px"/>
+              <input type="domaine" name="domaine" id="name5" placeholder="Domaine" required style=" width:250px;"/>
+              <input type="date_construction" name="dateConst" id="name6" placeholder="Date de contruction" required style=" width:250px;"/>
+              <input type="type" name="type" id="choix1" placeholder="Type"  style=" width:250px;"/>
+              <input type="chiffre_d_affaire" name="chiffreAff" id="choix1-2" placeholder="Chiffre d'affaire"  style=" width:250px;"/>
               <input type="text" name="name" id="choix2" placeholder="Desciption" style="display:none; width:250px;" />
               </div>
               <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
 
               <div class="mx-auto" style="...">
                 <button class="btn btn-outline-success" type="button" style="height:35px; width:110px;margin-left:40%">Register</button>
-                <button class="btn btn-outline-warning" type="button"  style="height:35px; width:100px;margin-left:-80%">Login</button>
+                <!--<button class="btn btn-outline-warning" type="button"  style="height:35px; width:100px;margin-left:-80%">Login</button>-->
               </div>
             </form>
           </div>

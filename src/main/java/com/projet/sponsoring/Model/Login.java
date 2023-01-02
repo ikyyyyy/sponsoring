@@ -5,13 +5,37 @@ import lombok.Data;
 import lombok.ToString;
 
 @Entity
+@Data
 @ToString
 @Table(name="login")
 public class Login {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_log;
     private String username;
     private String passwd;
+
+    @OneToOne(targetEntity = Club.class, cascade=CascadeType.ALL)
+    private Club club;
+
+    @OneToOne(targetEntity = Entreprise.class, cascade=CascadeType.ALL)
+    private Entreprise entreprise;
+
+    public Club getClub() {
+        return club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
+    }
+
+    public void setEntreprise(Entreprise entreprise) {
+        this.entreprise = entreprise;
+    }
+
+    public Entreprise getEntreprise() {
+        return entreprise;
+    }
 
     public Login(){}
 
