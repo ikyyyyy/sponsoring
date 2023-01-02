@@ -3,6 +3,7 @@ package com.projet.sponsoring.Service;
 import com.projet.sponsoring.DAO.CoordonneeDAO;
 import com.projet.sponsoring.DAO.EntrepriseDAO;
 import com.projet.sponsoring.DAO.LoginDAO;
+import com.projet.sponsoring.Model.Club;
 import com.projet.sponsoring.Model.Coordonnee;
 import com.projet.sponsoring.Model.Entreprise;
 import com.projet.sponsoring.Model.Login;
@@ -20,6 +21,18 @@ public class EntrepriseService {
     LoginDAO daoLogin;
     @Autowired
     CoordonneeDAO daoCoord;
+
+    public Entreprise findbyname(String username){
+        List<Entreprise> l= daoEntreprise.findAll();
+        Entreprise d=null;
+        for(int i=0; i<l.size();i++){
+            d = l.get(i);
+            if(username==d.getNom()){
+                return d;
+            }
+        }
+        return d;
+    }
 
 
     public void AddEntreprise(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, Double chiffre_d_affaire){

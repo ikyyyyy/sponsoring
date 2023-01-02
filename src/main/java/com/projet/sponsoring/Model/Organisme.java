@@ -18,8 +18,15 @@ public abstract class Organisme {
     private String domaine;
     private String date_construction;
 
+    public String getNom() {
+        return nom;
+    }
 
-  /*  public Login getLogin() {
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+/*  public Login getLogin() {
         return login;
     }
 
