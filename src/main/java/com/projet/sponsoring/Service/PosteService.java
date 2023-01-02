@@ -15,10 +15,11 @@ public class PosteService {
         dao.deleteById(id);
         return "Poste deleted successfully";
     }
-    public void updatePoste(Optional<Poste> p){
-        dao.save(p.get());
+    public Poste findbyid(Integer id_poste){
+        return dao.findById(id_poste).get();
     }
-    public Optional<Poste> findbyid(Integer id){
-        return dao.findById(id);
+    public boolean updateposte(Poste p){
+        dao.save(p);
+        return true;
     }
 }

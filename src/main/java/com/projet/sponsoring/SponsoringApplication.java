@@ -55,8 +55,8 @@ public class SponsoringApplication implements CommandLineRunner {
 
 		listeCoordE.add(c1);
 		listeCoordE.add(c2);
-
-
+*/
+/*
 		Entreprise entreprise = new Entreprise();
 		entreprise.setLogin(loginEntreprise);
 		entreprise.setDomaine("IT");
@@ -74,12 +74,12 @@ public class SponsoringApplication implements CommandLineRunner {
 		daoLogin.save(loginEntreprise);
 		daoEntreprise.save(entreprise);
 		daoCoord.save(c1);
-		daoCoord.save(c2);*/
+		daoCoord.save(c2);
 
 
 
 
-		/*Login loginClub = new Login();
+		Login loginClub = new Login();
 		loginClub.setUsername("login2");
 		loginClub.setPassword("sdfg");
 
@@ -93,29 +93,47 @@ public class SponsoringApplication implements CommandLineRunner {
 
 		loginClub.setClub(club);
 
-		List listeCoordC = new ArrayList<Coordonnee>();
 
-		Coordonnee c1 = new Coordonnee();
-		c1.setEmail("asdj@gmail.com");
-		c1.setTelephone("0823854");
-		c1.setAdresse("707, mellousa");
+		Coordonnee c3 = new Coordonnee();
+		c3.setEmail("asdj@gmail.com");
+		c3.setTelephone("0823854");
+		c3.setAdresse("707, mellousa");
 
-		Coordonnee c2 = new Coordonnee();
-		c2.setEmail("asdasfj@gmail.com");
-		c2.setTelephone("0987654");
-		c2.setAdresse("707, mastdfusa");
+		Coordonnee c4 = new Coordonnee();
+		c4.setEmail("asdasfj@gmail.com");
+		c4.setTelephone("0987654");
+		c4.setAdresse("707, mastdfusa");
 
-		listeCoordC.add(c1);
-		listeCoordC.add(c2);
+		listeCoordC.add(c3);
+		listeCoordC.add(c4);
 
-		c1.setClub(club);
-		c2.setClub(club);
+		c3.setClub(club);
+		c4.setClub(club);
 		club.setListeCoordonnees(listeCoordC);
 
 		daoLogin.save(loginClub);
 		daoCLub.save(club);
-		daoCoord.save(c1);
-		daoCoord.save(c2);*/
+		daoCoord.save(c3);
+		daoCoord.save(c4);*/
+
+
+
+		/*Login loginEntreprise = new Login();
+		loginEntreprise.setUsername("login");
+		loginEntreprise.setPassword("pass");
+
+		Entreprise entreprise = new Entreprise();
+		entreprise.setLogin(loginEntreprise);
+		entreprise.setDomaine("domaine");
+		entreprise.setNom("nom");
+		entreprise.setType("type");
+		entreprise.setDate_construction("dateConst");
+		entreprise.setActivite("activite");
+		entreprise.setChiffre_d_affaire(1976725.876);
+		loginEntreprise.setEntreprise(entreprise);
+
+		daoLogin.save(loginEntreprise);
+		daoEntreprise.save(entreprise);*/
 
 
 	}
