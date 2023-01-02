@@ -2,10 +2,12 @@ package com.projet.sponsoring.Service;
 
 import com.projet.sponsoring.DAO.ClubDAO;
 import com.projet.sponsoring.Model.Club;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ClubService {
+    @Autowired
     ClubDAO clubdao;
     public Club findbyname(String username){
         List<Club> l= clubdao.findAll();

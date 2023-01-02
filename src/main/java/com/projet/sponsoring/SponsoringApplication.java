@@ -25,14 +25,14 @@ public class SponsoringApplication implements CommandLineRunner {
 		SpringApplication.run(SponsoringApplication.class, args);
 	}
 
-	/*@Autowired
+	@Autowired
 	LoginDAO daoLogin;
 	@Autowired
 	EntrepriseDAO daoEntreprise;
 	@Autowired
 	ClubDAO daoCLub;
 	@Autowired
-	CoordonneeDAO daoCoord;*/
+	CoordonneeDAO daoCoord;
 
 	@Override
 	public void run(String... args) throws Exception {
