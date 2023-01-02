@@ -18,6 +18,17 @@ public class Club extends Organisme{
     @OneToMany(fetch= FetchType.LAZY, targetEntity = Coordonnee.class, cascade = CascadeType.ALL)
     private List listeCoordonnees;
 
+    @OneToMany(fetch= FetchType.LAZY, targetEntity = Poste.class, cascade = CascadeType.ALL)
+    private List listePostes;
+
+    public List getListePostes() {
+        return listePostes;
+    }
+
+    public void setListePostes(List listePostes) {
+        this.listePostes = listePostes;
+    }
+
     public List getListeCoordonnees() {
         return listeCoordonnees;
     }
