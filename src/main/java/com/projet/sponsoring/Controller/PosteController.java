@@ -16,13 +16,12 @@ public class PosteController {
     @RequestMapping(value="/updatePoste",method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView updatePoste(@RequestParam Integer id){
-        Optional<Poste> p =posteservice.findbyid(id);
-        posteservice.updatePoste(p);
-        return new ModelAndView("index");
-
+        Poste p =posteservice.findbyid(id);
+        posteservice.updateposte(p);
+        return new ModelAndView("home");
     }
     @DeleteMapping("/delete{id}")
-    public String removeUser(@RequestParam Integer id){
+    public String removePoste(@RequestParam Integer id){
         return posteservice.deletePoste(id);
     }
 }
