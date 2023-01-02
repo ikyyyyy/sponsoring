@@ -14,6 +14,9 @@ public class Login {
     private Integer id_log;
     private String username;
     private String passwd;
+    @Column(insertable=false, updatable=false)
+    private Integer club_id_organisme;
+    //private int entreprise_id_organisme;
 
     @OneToOne(targetEntity = Club.class, cascade=CascadeType.ALL)
     private Club club;
@@ -43,6 +46,18 @@ public class Login {
         id_log = id;
         username = name;
         passwd = pass;
+    }
+    /*public boolean is_club(){
+        if(getEntreprise().getId_organisme().equals(null)){
+            System.out.println("its a club");
+            return true;
+        }
+        System.out.println("its an entreprise");
+        return false;
+    }*/
+
+    public Integer getClub_id_organisme() {
+        return club_id_organisme;
     }
 
     public int getId_log() {
