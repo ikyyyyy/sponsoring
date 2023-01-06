@@ -51,13 +51,25 @@ a:focus, a:hover{
 }
 
 /* header section style start here */
+.fb-postes{
+    font-size: 20px;
+    background: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    color: #769bcb;
+    transition: .4s;
 
+}
 header{
     width: 100%;
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.name_logo{
+    padding-left: 5px;
+
 }
 .header-container{
     width: 95%;
