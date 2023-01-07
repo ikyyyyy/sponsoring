@@ -28,6 +28,7 @@ import java.util.Objects;
 public class LoginController {
     @Autowired
     private LoginService userService;
+    @Autowired
     private ClubService clubservice;
     @Autowired
     private EntrepriseService entrepriseservice;
