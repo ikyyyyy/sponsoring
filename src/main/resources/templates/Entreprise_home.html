@@ -6,7 +6,12 @@
 </head>
 <body>
 
-
-
+<p> welcome to espace entreprise </p>
+<div>
+    <form th:action="@{/loginPage}" method="post">
+        <textarea name="note" cols="40" rows="2"></textarea>
+        <br> <input type="submit" value="Add Note" />
+    </form>
+</div>
 </body>
 </html>

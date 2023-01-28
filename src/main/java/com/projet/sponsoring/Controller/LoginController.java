@@ -44,13 +44,13 @@ public class LoginController {
         HttpSession httpSession = request.getSession();
         if(userService.login(username, password, userService.listAllUser())==2){
             Club club = clubservice.findbyname(username);
-            httpSession.setAttribute("club", club);
+            httpSession.setAttribute("CLUB", club);
             System.out.println("welcome_club");
             return new ModelAndView("club_home");
         }
         if(userService.login(username, password, userService.listAllUser())==1) {
             Entreprise entreprise = entrepriseservice.findbyname(username);
-            httpSession.setAttribute("Entreprise", entreprise);
+            httpSession.setAttribute("ENTREPRISE", entreprise);
             System.out.println("welcome_entreprise");
             return new ModelAndView("Entreprise_home");
         }
