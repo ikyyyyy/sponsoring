@@ -19,6 +19,7 @@ public class ClubController {
         return "signup1";
     }*/
 
+
     @PostMapping("/signupClub")
     public String signupClub(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, String description, HttpServletRequest request){
       club.AddClub(username, passwd, domaine, nom, type, date_construction, activite,description);

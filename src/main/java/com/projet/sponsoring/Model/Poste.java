@@ -46,6 +46,9 @@ public class Poste {
     }
 
 
+    public Integer getId_poste() {
+        return id_poste;
+    }
 
     public void setId_poste(Integer id_poste) {
         this.id_poste = id_poste;

@@ -33,7 +33,18 @@ public class EntrepriseService {
         }
         return d;
     }
-
+    public Integer findbylogin(String username){
+        List<Entreprise> l = daoEntreprise.findAll();
+        Entreprise d=null;
+        for(int i=0; i<l.size();i++){
+            d = l.get(i);
+            if(username==d.getNom()){
+                return d.getId_organisme() ;
+            }
+        }
+        Integer log=null;
+        return log;
+    }
 
     public void AddEntreprise(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, Double chiffre_d_affaire){
         Login loginEntreprise = new Login();
