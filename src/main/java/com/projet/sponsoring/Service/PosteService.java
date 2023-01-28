@@ -32,4 +32,17 @@ public class PosteService {
         dao.findAll().forEach(postes::add);
         return postes;
     }
+    public boolean updatePoste(Integer id, String contenu){
+        List<Poste> p = listAllPostes();
+        Poste t;
+        for(int i=0; i<p.size(); i++){
+            if(p.get(i).getId_poste()==id){
+                p.get(i).setContenu(contenu);
+                dao.save(p.get(i));
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
