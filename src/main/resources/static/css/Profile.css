@@ -1,0 +1,20 @@
+.profile{
+   display: flex;
+   flex-direction: column;
+   height: auto;
+
+}
+.profile ul{
+    display: flex;
+    flex-direction: column;  
+    text-transform:none;
+}
+.profile span{
+    margin-left: 2px;
+    color: black;
+}
+.profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
