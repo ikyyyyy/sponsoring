@@ -26,8 +26,8 @@ public class PosteController {
         return posteservice.deletePoste(id);
     }
 
-    @RequestMapping ("/listePostes")
+    /*@RequestMapping ("/listePostes")
     public List<Poste> getAllPostes(){
-        return posteservice.listAllPostes();
-    }
+        return posteservice.listAllPostes_Clubs();
+    }*/
 }

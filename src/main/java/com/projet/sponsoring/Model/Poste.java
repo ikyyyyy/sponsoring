@@ -16,7 +16,7 @@ public class Poste {
     private Integer id_poste;
     private Date date_org;
     private String contenu;
-    private int priorite ;
+    private Integer priorite ;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id_organisme")
     private Club club;
@@ -58,4 +58,6 @@ public class Poste {
     public void setPriorite(int priorite) {
         this.priorite = priorite;
     }
+
+
 }

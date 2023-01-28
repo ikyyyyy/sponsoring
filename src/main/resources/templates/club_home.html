@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,10 @@
 
 </head>
 <body>
+
+<h2>Messages</h2>
+<p>${club}</p>
+<p><div th:text="${#session.getAttribute('club')}">John Doe</div></p>
 
 <!-- header section start -->
 

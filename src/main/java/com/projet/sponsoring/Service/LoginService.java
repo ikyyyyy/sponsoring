@@ -43,6 +43,19 @@ public class LoginService {
         return 0;
     }
 
+   /* public int getLoginId(String username, String password) {
+        Login d =null;
+        List<Login> l = new ArrayList<>();
+        for(int i =0 ; i < l.size() ; i++) {
+            d = l.get(i);
+            if (username.equals(d.getUsername()) && password.equals(d.getPassword())) {
+                return d.getClub_id_organisme();
+            }
+        }
+        return 0;
+    }*/
+
+
     /*public Login getUser(Integer id){
         return dao.findById(id).get();
     }

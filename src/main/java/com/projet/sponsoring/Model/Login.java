@@ -24,6 +24,10 @@ public class Login {
     @OneToOne(targetEntity = Entreprise.class, cascade=CascadeType.ALL)
     private Entreprise entreprise;
 
+    public String toString(){
+        return this.username + " " + this.passwd + "   ";
+    }
+
     public Club getClub() {
         return club;
     }

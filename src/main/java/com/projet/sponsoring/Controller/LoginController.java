@@ -25,6 +25,7 @@ import java.util.Objects;
 
 @RestController
 @Scope("session")
+@SessionAttributes({"club", "id"})
 public class LoginController {
     @Autowired
     private LoginService userService;
@@ -63,10 +64,16 @@ public class LoginController {
         return "index.html";
     }
 
-   /* @RequestMapping ("/signup")
-    public List<Login> getAllUsers(){
-        return userService.listAllUser();
-    }*/
+   @RequestMapping ("/Entreprise_home")
+    public String Entreprise_home(){
+        return "Entreprise_home.html";
+    }
+
+    @RequestMapping ("/club_home")
+    public String club_home(){
+        return "club_home.html";
+    }
+
  /*   @GetMapping("")
     public List<Login> list() {
         return userService.listAllUser();

@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data
 @ToString
 @Table(name = "club")
-public class Club extends Organisme{
+public class Club extends Organisme {
     private String description;
     @OneToOne(targetEntity = Login.class)
     private Login login;
@@ -20,6 +21,10 @@ public class Club extends Organisme{
 
     @OneToMany(fetch= FetchType.LAZY, targetEntity = Poste.class, cascade = CascadeType.ALL)
     private List listePostes;
+
+    public String toString(){
+        return this.getId_organisme() +" "+ this.getDate_construction() +" " +this.description + " ";
+    }
 
     public List getListePostes() {
         return listePostes;
@@ -44,4 +49,8 @@ public class Club extends Organisme{
     public Login getLogin() {
         return login;
     }
+
+
+
+
 }
