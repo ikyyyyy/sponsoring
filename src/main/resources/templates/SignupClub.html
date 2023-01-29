@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('images/imm.png');"></div>
+    <div class="contents order-2 order-md-1">
+
+        <div class="container">
+            <div >
+                <div class="testbox">
+                    <h1>Sign Up</h1>
+                    <hr>
+                    <div class="accounttype">
+                        <input type="radio" value="None" id="radioOne" name="account" checked/>
+                        <label for="radioOne" class="radio"  onclick="document.getElementById('club').style.display='none';document.getElementById('Entreprise').style.display='block';">Entreprise</label>
+                        <input type="radio" value="None" id="radioTwo" name="account" />
+                        <label for="radioTwo" class="radio" onclick="document.getElementById('Entreprise').style.display='none';document.getElementById('club').style.display='block' ">Club</label>
+                    </div>
+                    <hr>
+                    <form action="#">
+                        <div id="Entreprise">
+                            <input type="text" name="username" id="name1" placeholder="login" required style=" width:250px;"/>
+                            <input type="password" name="passwd" id="name2" placeholder="Password" required style=" width:250px;"/>
+                            <input type="text" name="nom" id="name3" placeholder="Nom" required style=" width:250px; margin-top:-10px"/>
+                            <input type="text" name="activite" id="name4" placeholder="Activité" required style=" width:250px; "/>
+                            <input type="text" name="domaine" id="name5" placeholder="Domaine" required style=" width:250px;"/>
+                            <input type="text" name="date_construction" id="name6" placeholder="Date de contruction" required style=" width:250px;"/>
+                            <input type="text" name="type" id="choix1" placeholder="Type"  style=" width:250px;"/>
+                            <input type="text" name="chiffre_d_affaire" id="choix1-2" placeholder="Chiffre d'affaire"  style=" width:250px;"/>
+                        </div>
+                    </form>
+                    <form action="#">
+                        <div id="club">
+                            <input type="text" name="username" id="nam1" placeholder="login" required style=" width:250px;"/>
+                            <input type="password" name="passwd" id="nam2" placeholder="Password" required style=" width:250px;"/>
+                            <input type="text" name="nom" id="nam3" placeholder="Nom" required style=" width:250px; margin-top:-10px"/>
+                            <input type="text" name="activite" id="nam4" placeholder="Activité" required style=" width:250px; "/>
+                            <input type="text" name="domaine" id="nam5" placeholder="Domaine" required style=" width:250px;"/>
+                            <input type="text" name="date_construction" id="nam6" placeholder="Date de contruction" required style=" width:250px;"/>
+                            <input type="text" name="description" id="choix2" placeholder="Description" style="
+               width:250px;" />
+                        </div>
+                        <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+
+                        <div class="mx-auto" style="...">
+                            <button class="btn btn-outline-success" type="button" style="height:35px; width:240px;margin-left:-0.5%">Register</button>
+                            <!--<button class="btn btn-outline-warning" type="button"  style="height:35px; width:100px;margin-left:-80%">Login</button>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
