@@ -16,7 +16,7 @@ public class Login {
     private String passwd;
     @Column(insertable=false, updatable=false)
     private Integer club_id_organisme;
-    //private int entreprise_id_organisme;
+    private Integer entreprise_id_organisme;
 
     @OneToOne(targetEntity = Club.class, cascade=CascadeType.ALL)
     private Club club;
@@ -63,6 +63,11 @@ public class Login {
     public Integer getClub_id_organisme() {
         return club_id_organisme;
     }
+
+    public Integer getEntreprise_id_organisme() {
+        return entreprise_id_organisme;
+    }
+
 
     public int getId_log() {
         return id_log;

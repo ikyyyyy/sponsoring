@@ -45,13 +45,13 @@ public class LoginController {
         if(userService.login(username, password, userService.listAllUser())==2){
             Club club = clubservice.findbyname(username);
             httpSession.setAttribute("CLUB", club);
-            System.out.println("welcome_club");
+            System.out.println("welcome_club " + httpSession.getAttribute("CLUB"));
             return new ModelAndView("club_home");
         }
         if(userService.login(username, password, userService.listAllUser())==1) {
             Entreprise entreprise = entrepriseservice.findbyname(username);
             httpSession.setAttribute("ENTREPRISE", entreprise);
-            System.out.println("welcome_entreprise");
+            System.out.println("welcome_entreprise " + httpSession.getAttribute("ENTREPRISE"));
             return new ModelAndView("Entreprise_home");
         }
         else{
@@ -64,15 +64,6 @@ public class LoginController {
         return "index.html";
     }
 
-   @RequestMapping ("/Entreprise_home")
-    public String Entreprise_home(){
-        return "Entreprise_home.html";
-    }
-
-    @RequestMapping ("/club_home")
-    public String club_home(){
-        return "club_home.html";
-    }
 
  /*   @GetMapping("")
     public List<Login> list() {

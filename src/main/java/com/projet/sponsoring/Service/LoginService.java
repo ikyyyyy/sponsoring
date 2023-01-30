@@ -26,18 +26,18 @@ public class LoginService {
     public int login(String username, String password, List<Login> l) {
         //List<Login> users = l;
         Login d =null;
-        System.out.println("loginservice traitment");
+        //System.out.println("loginservice traitment");
         for(int i =0 ; i < l.size() ; i++){
             d =l.get(i);
-            System.out.println("username is: "+d.getUsername()+" and password is: "+d.getPassword());
+            //System.out.println("username is: "+d.getUsername()+" and password is: "+d.getPassword());
             if(username.equals(d.getUsername()) && password.equals(d.getPassword())){
-                System.out.println(d.getClub_id_organisme());
+                //System.out.println(d.getClub_id_organisme());
                 if(d.getClub_id_organisme()==null){
                     System.out.println("its an entreprise");
-                    return 1;
+                    return d.getEntreprise_id_organisme();
                 }
                 System.out.println("its a club");
-                return 2;
+                return d.getClub_id_organisme();
             }
         }
         return 0;

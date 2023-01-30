@@ -42,7 +42,7 @@ import java.util.List;
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Object[]> p = daoPoste.listAllPostesByClubId(2);
+		/*List<Object[]> p = daoPoste.listAllPostesByClubId(2);
 
 		for (Object[] object : p) {
 			String bet = (String) object[0];
@@ -50,7 +50,7 @@ import java.util.List;
 			String week = (String) object[2];
 
 			System.out.println(bet + " " + name + " " + week);
-		}
+		}*/
 
 		/*Login the_login = daoLogin.findByUsernameAndPasswd("ikram", "passwd");
 		Integer the_id = the_login.getClub_id_organisme();

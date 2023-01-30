@@ -26,7 +26,11 @@ public abstract class Organisme {
         this.nom = nom;
     }
 
-/*  public Login getLogin() {
+    public Integer getId_organisme() {
+        return id_organisme;
+    }
+
+    /*  public Login getLogin() {
         return login;
     }
 
