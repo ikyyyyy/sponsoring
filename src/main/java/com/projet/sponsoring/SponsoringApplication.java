@@ -1,5 +1,6 @@
 package com.projet.sponsoring;
 
+import com.projet.sponsoring.Model.Login;
 import lombok.Data;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

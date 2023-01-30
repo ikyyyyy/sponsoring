@@ -43,13 +43,15 @@ public class LoginController {
         HttpSession httpSession = request.getSession();
         if(userService.login(username, password, userService.listAllUser())==2){
             Club club = clubservice.findbyname(username);
-            httpSession.setAttribute("CLUB", club);
+            System.out.println(club.getId_organisme());
+            httpSession.setAttribute("CLUB_ID", club.getId_organisme());
             System.out.println("welcome_club");
             return new ModelAndView("club_home");
         }
         if(userService.login(username, password, userService.listAllUser())==1) {
             Entreprise entreprise = entrepriseservice.findbyname(username);
-            httpSession.setAttribute("ENTREPRISE", entreprise);
+            System.out.println(entreprise.getId_organisme());
+            httpSession.setAttribute("ENTREPRISE_ID", entreprise.getId_organisme());
             System.out.println("welcome_entreprise");
             return new ModelAndView("Entreprise_home");
         }
