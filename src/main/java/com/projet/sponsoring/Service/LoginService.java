@@ -43,25 +43,10 @@ public class LoginService {
         return 0;
     }
 
-    /*public Login getUser(Integer id){
-        return dao.findById(id).get();
-    }
 
-    public void deleteUser(Integer id){
-        dao.deleteById(id);
-    }
-*/
     public List<Login> listAllUser() {
         List<Login> users = new ArrayList<>();
         dao.findAll().forEach(users::add);
         return users;
     }
-
-
-
-    /*public String deleteUser(String username){
-        Integer id = this.getId_log();
-        dao.deleteById(id);
-        return "user: " + username+ " deleted successfully";
-    }*/
 }
