@@ -1,13 +1,10 @@
 package com.projet.sponsoring.Controller;
 
-import com.projet.sponsoring.DAO.ClubDAO;
 import com.projet.sponsoring.Service.ClubService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ClubController {
@@ -26,5 +23,11 @@ public class ClubController {
 
         return "redirect:/signup";
     }
+    @GetMapping("/profile_club")
+    public String profile() {
+        return "redirect:/profile_club";
+    }
+
+
 
 }
