@@ -16,7 +16,7 @@ public class ClubController {
 
     @GetMapping("/signup1")
     public String signup() {
-        return "signup1";
+        return "Signup1";
     }
 
 

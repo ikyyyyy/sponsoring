@@ -1,12 +1,16 @@
 package com.projet.sponsoring.Controller;
 
 import com.projet.sponsoring.DAO.LoginDAO;
+import com.projet.sponsoring.DAO.PosteDAO;
 import com.projet.sponsoring.Model.Club;
 import com.projet.sponsoring.Model.Entreprise;
 import com.projet.sponsoring.Model.Login;
+import com.projet.sponsoring.Model.Poste;
 import com.projet.sponsoring.Service.ClubService;
 import com.projet.sponsoring.Service.EntrepriseService;
 import com.projet.sponsoring.Service.LoginService;
+import com.projet.sponsoring.Service.PosteService;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -16,10 +20,12 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.context.annotation.Scope;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.SessionAttributeMethodArgumentResolver;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,34 +38,81 @@ public class LoginController {
     private ClubService clubservice;
     @Autowired
     private EntrepriseService entrepriseservice;
+
+    @Autowired
+    private PosteService posteservice;
     @GetMapping(value="/login")
     public ModelAndView index(){
         return new ModelAndView("login");
     }
-    @RequestMapping  (value="/loginPage",method = RequestMethod.POST)
-    @ResponseBody
-    public ModelAndView LoginPage(@RequestParam  String username, String password,HttpServletRequest request, HttpServletResponse response){
-        //System.out.println(username+" "+password);
-        HttpSession httpSession = request.getSession();
-        if(userService.login(username, password, userService.listAllUser())==2){
-            Club club = clubservice.findbyname(username);
-            System.out.println(club.getId_organisme());
-            httpSession.setAttribute("CLUB_ID", club.getId_organisme());
-            System.out.println("welcome_club");
-            return new ModelAndView("club_home");
-        }
-        if(userService.login(username, password, userService.listAllUser())==1) {
-            Entreprise entreprise = entrepriseservice.findbyname(username);
-            System.out.println(entreprise.getId_organisme());
-            httpSession.setAttribute("ENTREPRISE_ID", entreprise.getId_organisme());
-            System.out.println("welcome_entreprise");
-            return new ModelAndView("Entreprise_home");
-        }
-        else{
-            System.out.println("try again");
-            return new ModelAndView("index");
-        }
+
+
+
+
+   @GetMapping("/club_home")
+    public ModelAndView processClub(Model model, HttpSession session){
+        Integer id = (Integer) session.getAttribute("clubID");
+        model.addAttribute("id", id);
+        //System.out.println("id "+id);
+       List<Object[]> allPostes = posteservice.listAllPostes();
+       model.addAttribute("allPostes", allPostes);
+
+       List<Object[]> myPostes = posteservice.listClubPostes(id);
+       model.addAttribute("myPostes", myPostes);
+
+        return new ModelAndView("club_home");
     }
+
+    @GetMapping("/entreprise_home")
+    public ModelAndView processEntreprise(Model model, HttpSession session){
+        Integer id = (Integer) session.getAttribute("entrepriseID");
+        model.addAttribute("id", id);
+        //System.out.println("id "+id);
+        List<Object[]> allPostes = posteservice.listAllPostes();
+        model.addAttribute("allPostes", allPostes);
+
+
+        return new ModelAndView("Entreprise_home");
+    }
+
+
+
+
+    @RequestMapping  (value="/loginPage",method = RequestMethod.POST)
+    public void LoginPage(@RequestParam  String username, String password,HttpServletRequest request, HttpServletResponse response) throws IOException {
+        /*HttpSession httpSession = request.getSession();*/
+        if (userService.login(username, password, userService.listAllUser()) == 2) {
+            Login d = null;
+            List<Login> l = userService.listAllUser();
+            for (int i = 0; i < l.size(); i++) {
+                d = l.get(i);
+                if (username.equals(d.getUsername()) && password.equals(d.getPassword())) {
+                    System.out.println("hahowaaa " + d.getClub().getId_organisme());
+                    //System.out.println(club);
+                    request.getSession().setAttribute("clubID", d.getClub().getId_organisme());
+                    response.sendRedirect("club_home");
+                }
+            }
+        }
+        if (userService.login(username, password, userService.listAllUser()) == 1) {
+            Login d = null;
+            List<Login> l = userService.listAllUser();
+            for (int i = 0; i < l.size(); i++) {
+                d = l.get(i);
+                if (username.equals(d.getUsername()) && password.equals(d.getPassword())) {
+                    System.out.println("hahowa " + d.getEntreprise().getId_organisme());
+                    //System.out.println(club);
+                    request.getSession().setAttribute("entrepriseID", d.getEntreprise().getId_organisme());
+                    response.sendRedirect("entreprise_home");
+                }
+            }
+        }
+
+        /*ystem.out.println("try again");
+        return "redirect:/index";*/
+
+    }
+
     @RequestMapping(value = {"/logout"}, method = RequestMethod.POST)
     public String logout(HttpServletRequest request, HttpServletResponse response){
         return "index.html";

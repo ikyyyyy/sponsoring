@@ -15,28 +15,30 @@ public class PosteService {
     @Autowired
     public PosteDAO dao;
 
-    public void listAllPostes_Clubs(){
+    public List<Object[]> listAllPostes(){
         List<Object[]> p = dao.listAllPostes();
 
-        for (Object[] object : p) {
+       /* for (Object[] object : p) {
             String bet = (String) object[0];
             String name = (String) object[1];
             String week = (String) object[2];
 
             System.out.println(bet + " " + name + " " + week);
-        }
+        }*/
+        return p;
     }
 
-    public void listClubPostes(Integer id){
-        List<Object[]> p = dao.listAllPostesByClubId(2);
+    public List<Object[]> listClubPostes(Integer id){
+        List<Object[]> p = dao.listAllPostesByClubId(id);
 
-        for (Object[] object : p) {
+        /*for (Object[] object : p) {
             String bet = (String) object[0];
             String name = (String) object[1];
             String week = (String) object[2];
 
             System.out.println(bet + " " + name + " " + week);
-        }
+        }*/
+        return p;
     }
 
     public String deletePoste(Integer id) {

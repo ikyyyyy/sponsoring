@@ -30,7 +30,7 @@ public Club findbyname(String username){
         Club d=null;
         for(int i=0; i<l.size();i++){
              d = l.get(i);
-            System.out.println("name club "+ d.getNom());
+            //System.out.println("name club "+ d.getNom());
             if(username==d.getNom()){
 
                 return d;

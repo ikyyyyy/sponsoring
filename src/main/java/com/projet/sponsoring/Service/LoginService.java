@@ -31,13 +31,13 @@ public class LoginService {
             d =l.get(i);
             //System.out.println("username is: "+d.getUsername()+" and password is: "+d.getPassword());
             if(username.equals(d.getUsername()) && password.equals(d.getPassword())){
-                //System.out.println(d.getClub_id_organisme());
+                //System.out.println("hahowa " + d.getClub_id_organisme());
                 if(d.getClub_id_organisme()==null){
-                    System.out.println("its an entreprise");
-                    return d.getEntreprise_id_organisme();
+                    //System.out.println("its an entreprise");
+                    return 1;
                 }
-                System.out.println("its a club");
-                return d.getClub_id_organisme();
+                //System.out.println("its a club");
+                return 2;
             }
         }
         return 0;

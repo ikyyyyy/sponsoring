@@ -17,6 +17,7 @@ public class Poste {
     private Date date_org;
     private String contenu;
     private Integer priorite ;
+    private String description;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id_organisme")
     private Club club;

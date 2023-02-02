@@ -2,17 +2,32 @@ package com.projet.sponsoring.Controller;
 
 import com.projet.sponsoring.Model.Poste;
 import com.projet.sponsoring.Service.PosteService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class PosteController {
     @Autowired
     public PosteService posteservice;
+
+
+    @RequestMapping(value="/myPosts", method = RequestMethod.POST)
+    public ModelAndView myPosts(Model model, HttpSession session){
+        Integer id = (Integer) session.getAttribute("clubID");
+        /*model.addAttribute("id", id);*/
+        List<Object[]> myPostes = posteservice.listClubPostes(id);
+        model.addAttribute("myPostes", myPostes);
+
+        return new ModelAndView("poste_club");
+    }
 
     @RequestMapping(value="/updatePoste",method = RequestMethod.POST)
     @ResponseBody

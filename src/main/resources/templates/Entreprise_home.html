@@ -118,30 +118,32 @@
                                     <li>actualité</li>
                                 </ul>
                             </div>
-                            <div class="fb-p1-main">
-                                <div class="post-title">
-                                    <img src="/images/user.png" alt="user picture">
-                                    <ul>
-                                        <li><h3>club cdh <span> . 2 hours ago</span></h3> </li>
-                                        <li><span>02 march at 12:55 PM</span></li>
-                                        <li></li>
-                                    </ul>
-                                  
-                                    
-                                </div>
-  
-                                <div class="post-images">
-                                    <div class="post-images1">
-                                        <img src="/images/post.jpg" alt="postimages 01">
-                                       
+<!--ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp-->
+
+                            <tr th:each="poste: ${allPostes}">
+                                <div class="fb-p1-main">
+                                    <div class="post-title">
+                                        <img src="/images/user.png" alt="user picture">
+                                        <ul>
+                                            <li><h3><td th:text="${poste[2]}" /><span> <!--. 2 hours ago--></span></h3> </li>
+                                            <li><span><td th:text="${poste[1]}" /> at 12:55 PM</span></li>
+                                            <li></li>
+                                        </ul>
+
+
                                     </div>
-                                 
-                                   
-                                </div>
-<div>
-    WebA paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section 
-    WebA paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section 
-</div>
+
+                                    <div class="post-images">
+                                        <div class="post-images1">
+                                            <img th:src="@{${'/images/' + poste[0]}}" alt="postimage">
+
+                                        </div>
+
+
+                                    </div>
+                                    <div>
+                                        <td th:text="${poste[3]}" />
+                                    </div>
                                 <div class="Done-event">
                                     <ul>
                                         <li >
@@ -153,8 +155,12 @@
   
                                     </ul>
                                 </div>
-                           
+
                             </div>
+
+    <HR>
+<!--ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp-->
+
                         </div>
                     </div>
 

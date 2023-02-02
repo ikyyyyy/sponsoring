@@ -13,6 +13,8 @@ public abstract class Organisme {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id_organisme;
+
+    private String photoProfile;
     private String nom;
     private String activite;
     private String domaine;
