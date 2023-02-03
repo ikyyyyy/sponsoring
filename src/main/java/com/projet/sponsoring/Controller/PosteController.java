@@ -31,12 +31,12 @@ public class PosteController {
     }
     @RequestMapping(value="/updatePoste",method = RequestMethod.POST)
     @ResponseBody
-//    public ModelAndView updatePoste(@RequestParam Integer id, String contenu){
+    public ModelAndView updatePoste(@RequestParam Integer id, String contenu){
 //        //Poste p =posteservice.findbyid(id);
 //        //posteservice.updateposte(p);
-//        posteservice.updatePoste(id,contenu);
-//        return new ModelAndView("club_home");
-//    }
+        posteservice.updatePoste(id,contenu);
+        return new ModelAndView("club_home");
+    }
     @DeleteMapping("/delete{id}")
     public String removePoste(@RequestParam Integer id){
         return posteservice.deletePoste(id);
