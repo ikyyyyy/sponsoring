@@ -19,6 +19,11 @@ public class PosteController {
     public PosteService posteservice;
 
 
+    @RequestMapping(value="/viewUpdatePoste", method = RequestMethod.POST)
+    public ModelAndView myPosts( ){
+        return new ModelAndView("poste_update");
+    }
+
     @RequestMapping(value="/myPosts", method = RequestMethod.POST)
     public ModelAndView myPosts(Model model, HttpSession session){
         Integer id = (Integer) session.getAttribute("clubID");

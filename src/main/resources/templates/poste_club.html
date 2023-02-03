@@ -151,9 +151,20 @@
                                     <ul>
                                         <li>
                                             <h3>
-                                                <td th:text="${poste[2]}" /><span> <a href="poste_update.html"
+                                                <td th:text="${poste[2]}" />
+                                                <span>
+
+                                                    <form th:action="@{/viewUpdatePoste}", method="POST">
+                                                        <button type="submit">
+                                                        <i i
+                                                           class="fa-sharp fa-solid fa-gear"></i>
+                                                        </button>
+                                                    </form>
+                                                <!--<a href="#"
                                                    class="fb-postes" style="padding-left: 60%;"><i
-                                                        class="fa-sharp fa-solid fa-gear"></i></a></span>
+                                                        class="fa-sharp fa-solid fa-gear"></i>
+                                                </a>-->
+                                                </span>
 
                                             </h3>
                                         </li>
