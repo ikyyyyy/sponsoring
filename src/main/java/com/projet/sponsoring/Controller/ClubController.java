@@ -11,17 +11,17 @@ public class ClubController {
     @Autowired
     ClubService club;
 
-    @GetMapping("/signup1")
+    @GetMapping("/signupp")
     public String signup() {
         return "Signup1";
     }
 
 
-    @PostMapping("/signupClub")
-    public String signupClub(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, String description, HttpServletRequest request){
-      club.AddClub(username, passwd, domaine, nom, type, date_construction, activite,description);
+    @PostMapping("/signupCLub")
+    public String signupClub(String username, String passwd,String domaine, String nom, String date_construction, String activite, String description, HttpServletRequest request){
+      club.AddClub(username, passwd, domaine, nom, date_construction, activite,description);
 
-        return "redirect:/signup";
+        return "redirect:/signupp";
     }
     @GetMapping("/profile_club")
     public String profile() {

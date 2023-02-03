@@ -39,14 +39,17 @@ public class Club extends Organisme {
     }
 
     public void setListeCoordonnees(List listeCoordonnees) {
+
         this.listeCoordonnees = listeCoordonnees;
     }
 
     public void setLogin(Login login) {
+
         this.login = login;
     }
 
     public Login getLogin() {
+
         return login;
     }
 

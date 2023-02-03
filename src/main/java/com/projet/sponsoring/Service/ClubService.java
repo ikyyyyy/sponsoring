@@ -38,7 +38,7 @@ public Club findbyname(String username){
         }
         return d;
     }
-    public void AddClub(String username, String passwd,String domaine, String nom, String type, String date_construction, String activite, String description){
+    public void AddClub(String username, String passwd,String domaine, String nom, String date_construction, String activite, String description){
         Login loginClub = new Login();
         loginClub.setUsername(username);
         loginClub.setPassword(passwd);
