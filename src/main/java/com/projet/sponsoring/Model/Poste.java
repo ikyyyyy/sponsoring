@@ -2,9 +2,8 @@ package com.projet.sponsoring.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.w3c.dom.Text;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -14,9 +13,14 @@ public class Poste {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_poste;
-    private Date date_org;
+    private LocalDate date_org;
     private String contenu;
     private Integer priorite ;
+
+    public Poste(String contenu ) {
+        this.contenu = contenu;
+    }
+
     private String description;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id_organisme")
@@ -38,11 +42,11 @@ public class Poste {
         this.contenu = contenu;
     }
 
-    public Date getDate_org() {
+    public LocalDate getDate_org() {
         return date_org;
     }
 
-    public void setDate_org(Date date_org) {
+    public void setDate_org(LocalDate date_org) {
         this.date_org = date_org;
     }
 

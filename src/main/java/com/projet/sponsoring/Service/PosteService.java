@@ -1,6 +1,7 @@
 package com.projet.sponsoring.Service;
 
 import com.projet.sponsoring.DAO.PosteDAO;
+import com.projet.sponsoring.Model.Entreprise;
 import com.projet.sponsoring.Model.Login;
 import com.projet.sponsoring.Model.Poste;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,12 @@ public class PosteService {
         }*/
         return p;
     }
+    public void createPost(String contenu)
+    {
 
+        Poste poste= new Poste(contenu);
+        dao.save(poste);
+    }
     public String deletePoste(Integer id) {
         //Integer id = p.getId_poste();
         dao.deleteById(id);
